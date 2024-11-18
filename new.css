@@ -1,0 +1,170 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1c1c1c;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar h1 {
+    color: #0fb85e;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background: #0fb85e;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: scroll;
+}
+
+header h2 {
+    font-size: 2rem;
+    color: #0fb85e;
+    margin-bottom: 20px;
+}
+
+header input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background: #1c1c1c;
+    color: #fff;
+    border-radius: 5px;
+}
+
+header input::placeholder {
+    color: #777;
+}
+
+/* Playlists Section - align playlist cards vertically */
+.playlists {
+    display: flex;
+    flex-direction: column; /* This ensures the playlist cards align vertically */
+    gap: 20px; /* Adds space between the cards */
+    margin-top: 20px;
+}
+
+.playlist-card {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%; /* Make the cards take the full width of their container */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.playlist-card a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.playlist-card a:hover {
+    color: #0fb85e;
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Cards */
+.image-card {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.image-card img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .playlists {
+        flex-direction: column;
+    }
+
+    .playlist-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    header input {
+        font-size: 1rem;
+    }
+}
